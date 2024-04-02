@@ -1,12 +1,8 @@
 import "./App.css";
-import ExampleHauGiangMap from "./components/mekong/example-hau-giang-map";
+import ROUMap from "./components/rou-map";
 
 function App() {
-  return (
-    <>
-      <ExampleHauGiangMap />
-    </>
-  );
+  return <ROUMap />;
 }
 
 export default App;
