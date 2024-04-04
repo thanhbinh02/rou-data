@@ -1,15 +1,15 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
-import { ROU_MAP } from "../data/rou-map";
+import { VIET_NAM_MAP } from "../data/viet-nam";
 import { COLOR_LIST } from "../data";
 
 highchartsMap(Highcharts);
 
-const ROUMap = () => {
+const NearEast = () => {
   const options = {
     chart: {
-      map: ROU_MAP,
+      map: VIET_NAM_MAP,
       width: 500,
       height: 700,
     },
@@ -65,45 +65,58 @@ const ROUMap = () => {
   );
 };
 
-export default ROUMap;
+export default NearEast;
+
+// const MAP_CHART = [
+//   {
+//     name: "Near EAST",
+//     color: COLOR_LIST[1],
+//     data: ["binh-duong", "dong-nai", "binh-thuan", "ba-ria-vung-tau"].map(
+//       (code) => ({
+//         code,
+//         color: COLOR_LIST[11],
+//       })
+//     ),
+//   },
+// ];
 
 const MAP_CHART = [
   {
-    name: "Far EAST",
-    color: COLOR_LIST[10],
+    name: "Bình Dương",
+    color: COLOR_LIST[0],
     data: [
       {
-        code: "far-east",
-        color: COLOR_LIST[10],
+        code: "binh-duong",
+        color: COLOR_LIST[0],
       },
     ],
   },
   {
-    name: "Near EAST",
+    name: "Đồng Nai",
     color: COLOR_LIST[1],
     data: [
       {
-        code: "near-east",
+        code: "dong-nai",
         color: COLOR_LIST[1],
       },
     ],
   },
   {
-    name: "HCM",
+    name: "Bình Thuận",
     color: COLOR_LIST[2],
     data: [
       {
-        code: "hcm",
+        code: "binh-thuan",
         color: COLOR_LIST[2],
       },
     ],
   },
   {
-    name: "Mekong",
+    name: "Bà Rịa Vũng Tàu",
     color: COLOR_LIST[3],
     data: [
       {
-        code: "mekong",
+        code: "ba-ria-vung-tau",
         color: COLOR_LIST[3],
       },
     ],

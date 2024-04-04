@@ -1,15 +1,15 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
-import { ROU_MAP } from "../data/rou-map";
+import { VIET_NAM_MAP } from "../data/viet-nam";
 import { COLOR_LIST } from "../data";
 
 highchartsMap(Highcharts);
 
-const ROUMap = () => {
+const MekongMap = () => {
   const options = {
     chart: {
-      map: ROU_MAP,
+      map: VIET_NAM_MAP,
       width: 500,
       height: 700,
     },
@@ -65,46 +65,116 @@ const ROUMap = () => {
   );
 };
 
-export default ROUMap;
+export default MekongMap;
 
 const MAP_CHART = [
   {
-    name: "Far EAST",
-    color: COLOR_LIST[10],
+    name: "Bến Tre",
+    color: COLOR_LIST[0],
     data: [
       {
-        code: "far-east",
-        color: COLOR_LIST[10],
+        code: "ben-tre",
+        color: COLOR_LIST[0],
       },
     ],
   },
   {
-    name: "Near EAST",
+    name: "Sóc Trăng",
     color: COLOR_LIST[1],
     data: [
       {
-        code: "near-east",
+        code: "soc-trang",
         color: COLOR_LIST[1],
       },
     ],
   },
   {
-    name: "HCM",
+    name: "Cà Mau",
     color: COLOR_LIST[2],
     data: [
       {
-        code: "hcm",
+        code: "ca-mau",
         color: COLOR_LIST[2],
       },
     ],
   },
   {
-    name: "Mekong",
+    name: "An Giang",
     color: COLOR_LIST[3],
     data: [
       {
-        code: "mekong",
+        code: "an-giang",
         color: COLOR_LIST[3],
+      },
+    ],
+  },
+  {
+    name: "Bạc Liêu",
+    color: COLOR_LIST[3],
+    data: [
+      {
+        code: "bac-lieu",
+        color: COLOR_LIST[3],
+      },
+    ],
+  },
+  {
+    name: "Đồng Tháp",
+    color: COLOR_LIST[4],
+    data: [
+      {
+        code: "dong-thap",
+        color: COLOR_LIST[4],
+      },
+    ],
+  },
+  {
+    name: "Tiền Giang",
+    color: COLOR_LIST[5],
+    data: [
+      {
+        code: "tien-giang",
+        color: COLOR_LIST[5],
+      },
+    ],
+  },
+  {
+    name: "Trà Vinh",
+    color: COLOR_LIST[6],
+    data: [
+      {
+        code: "tra-vinh",
+        color: COLOR_LIST[6],
+      },
+    ],
+  },
+  {
+    name: "Vĩnh LOng",
+    color: COLOR_LIST[7],
+    data: [
+      {
+        code: "vinh-long",
+        color: COLOR_LIST[7],
+      },
+    ],
+  },
+  {
+    name: "Kiên Giang",
+    color: COLOR_LIST[8],
+    data: [
+      {
+        code: "kien-giang",
+        color: COLOR_LIST[8],
+      },
+    ],
+  },
+  {
+    name: "Hậu Giang",
+    color: COLOR_LIST[9],
+    data: [
+      {
+        code: "hau-giang",
+        color: COLOR_LIST[9],
       },
     ],
   },

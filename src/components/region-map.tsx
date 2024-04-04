@@ -1,15 +1,14 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
-import { ROU_MAP } from "../data/rou-map";
-import { COLOR_LIST } from "../data";
+import { TMap, TRouMap } from "../ts";
 
 highchartsMap(Highcharts);
 
-const ROUMap = () => {
+const RegionMap = ({ data, map }: { data: TRouMap[]; map: TMap }) => {
   const options = {
     chart: {
-      map: ROU_MAP,
+      map: map,
       width: 500,
       height: 700,
     },
@@ -41,7 +40,7 @@ const ROUMap = () => {
       },
     },
 
-    series: MAP_CHART,
+    series: data,
 
     tooltip: {
       enabled: false,
@@ -65,47 +64,4 @@ const ROUMap = () => {
   );
 };
 
-export default ROUMap;
-
-const MAP_CHART = [
-  {
-    name: "Far EAST",
-    color: COLOR_LIST[10],
-    data: [
-      {
-        code: "far-east",
-        color: COLOR_LIST[10],
-      },
-    ],
-  },
-  {
-    name: "Near EAST",
-    color: COLOR_LIST[1],
-    data: [
-      {
-        code: "near-east",
-        color: COLOR_LIST[1],
-      },
-    ],
-  },
-  {
-    name: "HCM",
-    color: COLOR_LIST[2],
-    data: [
-      {
-        code: "hcm",
-        color: COLOR_LIST[2],
-      },
-    ],
-  },
-  {
-    name: "Mekong",
-    color: COLOR_LIST[3],
-    data: [
-      {
-        code: "mekong",
-        color: COLOR_LIST[3],
-      },
-    ],
-  },
-];
+export default RegionMap;

@@ -1,8 +1,12 @@
 import "./App.css";
-import ROUMap from "./components/rou-map";
+import SelectRou from "./components/select-rou";
 
 function App() {
-  return <ROUMap />;
+  return (
+    <div>
+      <SelectRou />
+    </div>
+  );
 }
 
 export default App;

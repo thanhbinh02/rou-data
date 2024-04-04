@@ -1,15 +1,15 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
-import { ROU_MAP } from "../data/rou-map";
+import { VIET_NAM_MAP } from "../data/viet-nam";
 import { COLOR_LIST } from "../data";
 
 highchartsMap(Highcharts);
 
-const ROUMap = () => {
+const HCMMap = () => {
   const options = {
     chart: {
-      map: ROU_MAP,
+      map: VIET_NAM_MAP,
       width: 500,
       height: 700,
     },
@@ -65,46 +65,26 @@ const ROUMap = () => {
   );
 };
 
-export default ROUMap;
+export default HCMMap;
 
 const MAP_CHART = [
   {
-    name: "Far EAST",
-    color: COLOR_LIST[10],
+    name: "TP Hồ Chí Minh",
+    color: COLOR_LIST[0],
     data: [
       {
-        code: "far-east",
-        color: COLOR_LIST[10],
+        code: "tp-hcm",
+        color: COLOR_LIST[0],
       },
     ],
   },
   {
-    name: "Near EAST",
+    name: "Long An",
     color: COLOR_LIST[1],
     data: [
       {
-        code: "near-east",
+        code: "long-an",
         color: COLOR_LIST[1],
-      },
-    ],
-  },
-  {
-    name: "HCM",
-    color: COLOR_LIST[2],
-    data: [
-      {
-        code: "hcm",
-        color: COLOR_LIST[2],
-      },
-    ],
-  },
-  {
-    name: "Mekong",
-    color: COLOR_LIST[3],
-    data: [
-      {
-        code: "mekong",
-        color: COLOR_LIST[3],
       },
     ],
   },
