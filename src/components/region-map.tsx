@@ -51,6 +51,9 @@ const RegionMap = ({ data, map }: { data: TRegion[]; map: TMap }) => {
         states: {
           inactive: { opacity: 1 },
         },
+
+        borderColor: "white", // Border color of the regions
+        borderWidth: 1,
       },
     },
 

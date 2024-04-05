@@ -7,12 +7,16 @@ import {
   PROVINCES_NEAR_EAST,
   REGION_ROU,
 } from "../data";
+import * as BINH_PHUOC_DATA from "../data/far-east/binh-phuoc/binh-phuoc.json";
+import * as DAK_NONG_DATA from "../data/far-east/dak-nong/dak-nong.json";
+import * as LAM_DONG_DATA from "../data/far-east/lam-dong/lam-dong.json";
 import {
   DISTRICTS_BINH_PHUOC,
   DISTRICTS_DAK_NONG,
   DISTRICTS_LAM_DONG,
   DISTRICTS_TAY_NINH,
 } from "../data/far-east/select-district-far-east";
+import * as TAY_NINH_DATA from "../data/far-east/tay-ninh/tay-ninh.json";
 import {
   DISTRICTS_HCM,
   DISTRICTS_LONG_AN,
@@ -38,20 +42,16 @@ import {
 } from "../data/near-east/select-district-near-east";
 import { ROU_MAP } from "../data/rou-map";
 import { VIET_NAM_MAP } from "../data/viet-nam";
-import { TMap, TRou, TRouMap } from "../ts";
+import { TMap, TRegion, TRou, TRouMap } from "../ts";
 import RegionMap from "./region-map";
-import * as TAY_NINH_DATA from "../data/far-east/tay-ninh/tay-ninh.json";
-import * as BINH_PHUOC_DATA from "../data/far-east/binh-phuoc/binh-phuoc.json";
-import * as LAM_DONG_DATA from "../data/far-east/lam-dong/lam-dong.json";
-import * as DAK_NONG_DATA from "../data/far-east/dak-nong/dak-nong.json";
 
 import * as BA_RIA_VUNG_TAU_DATA from "../data/near-east/ba-ria-vung-tau/ba-ria-vung-tau.json";
 import * as BINH_DUONG_DATA from "../data/near-east/binh-duong/binh-duong.json";
 import * as BINH_THUAN_DATA from "../data/near-east/binh-thuan/binh-thuan.json";
 import * as DONG_NAI_DATA from "../data/near-east/dong-nai/dong-nai.json";
 
-import * as HCM_DATA from "../data/hcm/tp-hcm/hcm.json";
 import * as LONG_AN_DATA from "../data/hcm/long-an/longan.json";
+import * as HCM_DATA from "../data/hcm/tp-hcm/hcm.json";
 
 import * as AN_GIÀNG_DATA from "../data/mekong/an-giang/an-giang.json";
 import * as BAC_LIEU_DATA from "../data/mekong/bac-lieu/bac-lieu.json";
@@ -64,6 +64,7 @@ import * as SOC_TRANG_DATA from "../data/mekong/soc-trang/soc-trang.json";
 import * as TIEN_GIANG_DATA from "../data/mekong/tien-giang/tien-giang.json";
 import * as TRA_VINH_DATA from "../data/mekong/tra-vinh/tra-vinh.json";
 import * as VINH_LONG_DATA from "../data/mekong/vinh-long/vinh-long.json";
+import PercentMap from "./percent-map";
 
 type TSelectRou = {
   data: TRouMap[];
@@ -78,12 +79,20 @@ const SelectRou = () => {
 
   const [provinces, setProvinces] = useState<TRou[]>();
 
+  const [displayChart, setDisplayChart] = useState(true);
+
   const handleChange = (_: number, record: TRou | TRou[]) => {
     if (!Array.isArray(record)) {
       setRou({
         data: record.data,
         map: record.map,
       });
+
+      setDisplayChart(false);
+
+      setTimeout(function () {
+        setDisplayChart(true);
+      }, 100);
 
       setProvinces(record.provinces);
     }
@@ -95,6 +104,7 @@ const SelectRou = () => {
       map: ROU_MAP,
     });
     setProvinces();
+    setDisplayChart(false);
   };
 
   const handleChangeProvince = (_: number, record: TRou | TRou[]) => {
@@ -103,8 +113,16 @@ const SelectRou = () => {
         data: record.data,
         map: record.map,
       });
+
+      setDisplayChart(false);
+
+      setTimeout(function () {
+        setDisplayChart(true);
+      }, 100);
     }
   };
+
+  const result = filterData(rou.data, rou.map);
 
   return (
     <div>
@@ -127,12 +145,25 @@ const SelectRou = () => {
           disabled={!provinces}
         />
       </Space>
-      <RegionMap data={rou.data} map={rou.map} />
+      <div className="grid grid-cols-1 gap-2 xl:grid-cols-2">
+        {/* <RegionMap data={rou.data} map={rou.map} /> */}
+
+        <div>{displayChart && <PercentMap data={rou.data} map={result} />}</div>
+      </div>
     </div>
   );
 };
 
 export default SelectRou;
+
+function filterData(data: TRegion[], map: TMap) {
+  const resultData = map.features.filter((item2) =>
+    data.some((item1) => item1.code === item2.id)
+  );
+
+  return { type: map.type, features: resultData };
+}
+
 const options = [
   {
     label: "Far EAST",
