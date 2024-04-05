@@ -113,18 +113,14 @@ const ExampleBarChart = ({ data, map }: { data: TRegion[]; map: TMap }) => {
       visible: false,
     },
 
-    tooltip: {
-      enabled: false, // Disable default tooltip
-    },
-
     plotOptions: {
       mapcolumn: {
         borderColor: "rgba(255,255,255,0.4)",
         borderWidth: 1,
         stacking: "normal",
         tooltip: {
-          shared: false,
           pointFormat: "This is a bar chart",
+          followPointer: true,
         },
         height: 200,
       },
