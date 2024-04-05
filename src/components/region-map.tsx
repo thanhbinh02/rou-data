@@ -1,11 +1,12 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
-import { TMap, TRouMap } from "../ts";
+import { TMap, TRegion } from "../ts";
+import { handleDataMap } from "../utils";
 
 highchartsMap(Highcharts);
 
-const RegionMap = ({ data, map }: { data: TRouMap[]; map: TMap }) => {
+const RegionMap = ({ data, map }: { data: TRegion[]; map: TMap }) => {
   const options = {
     chart: {
       map: map,
@@ -17,8 +18,21 @@ const RegionMap = ({ data, map }: { data: TRouMap[]; map: TMap }) => {
       series: {
         dataLabels: {
           enabled: true,
+          // formatter: function () {
+          //   return this.point.name;
+          // },
           formatter: function () {
-            return this.point.name;
+            return (
+              '<text x="0" y="0">' +
+              '<tspan x="0" dy="1.2em" style="color: black; font-weight: bold; font-size: 12px; background-color: blue;">' +
+              this.point.series.userOptions.volumes +
+              " tons" +
+              "</tspan>" +
+              '<tspan x="0" dy="1.2em" style="color: black; font-weight: bold; font-size: 16px; text-transform: uppercase;">' +
+              this.point.name +
+              "</tspan>" +
+              "</text>"
+            );
           },
           style: {
             textOutline: "none",
@@ -40,7 +54,7 @@ const RegionMap = ({ data, map }: { data: TRouMap[]; map: TMap }) => {
       },
     },
 
-    series: data,
+    series: handleDataMap(data),
 
     tooltip: {
       enabled: false,

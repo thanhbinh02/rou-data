@@ -97,15 +97,13 @@ const data = [
   "go-cong",
   "cai-lay",
   "tan-phuoc",
-  "tan-phuoc",
   "cai-be",
-  "cai-lay",
+  "tx-cai-lay",
   "chau-thanh",
   "cho-gao",
   "go-cong-tay",
   "go-cong-dong",
   "tan-phu-dong",
-  "tx-cai-lay",
 ];
 
 const MAP_CHART = data.map((item, i) => ({

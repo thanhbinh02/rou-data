@@ -3,7 +3,7 @@ import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
 
 import { COLOR_LIST } from "../../data";
-import * as TAY_NINH_DATA from "../../data/far-east/tay-ninh.json";
+import * as TAY_NINH_DATA from "../../data/far-east/tay-ninh/tay-ninh.json";
 
 highchartsMap(Highcharts);
 

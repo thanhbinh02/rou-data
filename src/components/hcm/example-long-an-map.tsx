@@ -105,7 +105,6 @@ const data = [
   "ben-luc",
   "thu-thua",
   "tan-tru",
-  "tan-tru",
   "can-duoc",
   "can-giuoc",
   "chau-thanh",

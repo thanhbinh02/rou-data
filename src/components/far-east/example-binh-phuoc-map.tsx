@@ -3,7 +3,7 @@ import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
 
 import { COLOR_LIST } from "../../data";
-import * as BINH_PHUOC_DATA from "../../data/far-east/binh-phuoc.json";
+import * as BINH_PHUOC_DATA from "../../data/far-east/binh-phuoc/binh-phuoc.json";
 
 highchartsMap(Highcharts);
 

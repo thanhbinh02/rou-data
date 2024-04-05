@@ -3,7 +3,7 @@ import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
 
 import { COLOR_LIST } from "../../data";
-import * as DAK_NONG_DATA from "../../data/far-east/dak-nong.json";
+import * as DAK_NONG_DATA from "../../data/far-east/dak-nong/dak-nong.json";
 
 highchartsMap(Highcharts);
 

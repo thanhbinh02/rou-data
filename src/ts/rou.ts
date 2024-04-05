@@ -27,6 +27,12 @@ export type TRou = {
   value: string;
   data: TRouMap[];
   map: TMap;
+  provinces: {
+    label: string;
+    value: string;
+    data: TRouMap[];
+    map: TMap;
+  }[];
 };
 
 export type TProvince = {
@@ -35,3 +41,10 @@ export type TProvince = {
 };
 
 export type TProvinces = TProvince[];
+
+export type TRegion = {
+  name: string;
+  code: string;
+};
+
+export type TRegions = TRegion[];
