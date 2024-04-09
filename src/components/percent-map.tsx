@@ -3,18 +3,12 @@ import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
 
 import { TMap, TRegion } from "../ts";
+import { COLOR_LIST } from "../data";
 
 highchartsMap(Highcharts);
 
-const calculateSumFromIndex = (arr, index) => {
-  const sum = arr
-    .slice(0, index + 1)
-    .reduce((acc, currentValue) => acc + currentValue, 0);
-  return sum;
-};
-
 Highcharts.seriesType(
-  "mapcolumn",
+  "bar",
   "column",
   {
     dataLabels: {
@@ -29,23 +23,12 @@ Highcharts.seriesType(
         points = series.points,
         firstSeries = series.chart.series[0];
 
-      const total = points
-        .map((point) => point.y)
-        .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-      const percentList = points.map((point) => (point.y / total) * 100);
-
-      const state = firstSeries.points[series.index - 3];
       Highcharts.each(points, function (point, index) {
-        const y =
-          state.plotY +
-          index * 6 -
-          calculateSumFromIndex(percentList, index) -
-          20;
+        const state = firstSeries.points[series.index - 3];
 
         point.graphic.attr({
           x: state.plotX,
-          y,
+          y: state.plotY - point.graphic.attr("height") - 20,
         });
       });
     },
@@ -63,10 +46,17 @@ const ExampleBarChart = ({ data, map }: { data: TRegion[]; map: TMap }) => {
           // eslint-disable-next-line @typescript-eslint/no-this-alias
           const chart = this;
 
+          const data = [4, 2, 1, 1, 2];
+          const data1 = calculateResult(data);
+          const data2 = data1.map((value, index) => ({
+            y: value * 1000,
+            color: COLOR_LIST[index + 10],
+          }));
+
           Highcharts.each(chart.series[0].points, function (state) {
             chart.addSeries(
               {
-                type: "mapcolumn",
+                type: "bar",
                 name: state.id,
                 zIndex: 6,
                 pointWidth: 30,
@@ -74,28 +64,7 @@ const ExampleBarChart = ({ data, map }: { data: TRegion[]; map: TMap }) => {
                 tooltip: {
                   pointFormat: "This is a bar chart",
                 },
-                data: [
-                  {
-                    x: 2000,
-                    y: 1000,
-                    color: "rgb(75 85 99)",
-                  },
-                  {
-                    x: 2000,
-                    y: 3000,
-                    color: "rgb(14 165 233)",
-                  },
-                  {
-                    x: 2000,
-                    y: 2000,
-                    color: "rgb(217 70 239)",
-                  },
-                  {
-                    x: 2000,
-                    y: 2000,
-                    color: "rgb(225 29 72)",
-                  },
-                ],
+                data: data2,
               },
               false
             );
@@ -106,15 +75,8 @@ const ExampleBarChart = ({ data, map }: { data: TRegion[]; map: TMap }) => {
       },
     },
 
-    xAxis: {
-      visible: false,
-    },
-    yAxis: {
-      visible: false,
-    },
-
     plotOptions: {
-      mapcolumn: {
+      bar: {
         borderColor: "rgba(255,255,255,0.4)",
         borderWidth: 1,
         stacking: "normal",
@@ -178,3 +140,16 @@ const MAP_CHART = [
     key: "74",
   },
 ];
+
+function calculateResult(data) {
+  const result = [];
+  let currentSum = 0;
+
+  // Tính tổng của tất cả các phần tử từ cuối mảng về đầu mảng
+  for (let i = data.length - 1; i >= 0; i--) {
+    currentSum += data[i];
+    result.unshift(currentSum);
+  }
+
+  return result;
+}
