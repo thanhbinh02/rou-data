@@ -113,6 +113,24 @@ const ExampleBarChart = ({ data, map }: { data: TRegion[]; map: TMap }) => {
     legend: {
       enabled: false,
     },
+
+    yAxis: {
+      min: 0,
+      max: 70000,
+      visible: false,
+    },
+
+    xAxis: {
+      visible: false,
+    },
+
+    mapNavigation: {
+      enableButtons: {
+        zoomIn: true,
+        zoomOut: true,
+      },
+      enableMouseWheelZoom: true,
+    },
   };
 
   return (
@@ -141,11 +159,10 @@ const MAP_CHART = [
   },
 ];
 
-function calculateResult(data) {
-  const result = [];
+function calculateResult(data: number[]): number[] {
+  const result: number[] = [];
   let currentSum = 0;
 
-  // Tính tổng của tất cả các phần tử từ cuối mảng về đầu mảng
   for (let i = data.length - 1; i >= 0; i--) {
     currentSum += data[i];
     result.unshift(currentSum);

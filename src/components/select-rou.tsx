@@ -42,7 +42,7 @@ import {
 } from "../data/near-east/select-district-near-east";
 import { ROU_MAP } from "../data/rou-map";
 import { VIET_NAM_MAP } from "../data/viet-nam";
-import { TMap, TRegion, TRou, TRouMap } from "../ts";
+import { TMap, TRegion, TRou } from "../ts";
 import RegionMap from "./region-map";
 
 import * as BA_RIA_VUNG_TAU_DATA from "../data/near-east/ba-ria-vung-tau/ba-ria-vung-tau.json";
@@ -67,7 +67,10 @@ import * as VINH_LONG_DATA from "../data/mekong/vinh-long/vinh-long.json";
 import PercentMap from "./percent-map";
 
 type TSelectRou = {
-  data: TRouMap[];
+  data: {
+    name: string;
+    code: string;
+  }[];
   map: TMap;
 };
 
@@ -103,7 +106,7 @@ const SelectRou = () => {
       data: REGION_ROU,
       map: ROU_MAP,
     });
-    setProvinces();
+    setProvinces([]);
     setDisplayChart(false);
   };
 
@@ -146,7 +149,7 @@ const SelectRou = () => {
         />
       </Space>
       <div className="grid grid-cols-1 gap-2 xl:grid-cols-2">
-        {/* <RegionMap data={rou.data} map={rou.map} /> */}
+        <RegionMap data={rou.data} map={rou.map} />
 
         <div>{displayChart && <PercentMap data={rou.data} map={result} />}</div>
       </div>

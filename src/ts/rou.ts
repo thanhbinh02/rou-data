@@ -15,17 +15,20 @@ export type TMap = {
       id: string;
       name: string;
     };
-  }[];
-  geometry: {
-    type: string;
-    coordinates: [[number, number][]];
+    geometry: {
+      type: string;
+      coordinates: number[][][][];
+    };
   }[];
 };
 
 export type TRou = {
   label: string;
   value: string;
-  data: TRouMap[];
+  data: {
+    name: string;
+    code: string;
+  }[];
   map: TMap;
   provinces: {
     label: string;
