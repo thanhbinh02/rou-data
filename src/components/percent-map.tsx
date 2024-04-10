@@ -77,6 +77,7 @@ const ExampleBarChart = ({ data, map }: { data: TRegion[]; map: TMap }) => {
 
     plotOptions: {
       bar: {
+        animation: false,
         borderColor: "rgba(255,255,255,0.4)",
         borderWidth: 1,
         stacking: "normal",

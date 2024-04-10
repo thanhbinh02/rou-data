@@ -12,6 +12,7 @@ const RegionMap = ({ data, map }: { data: TRegion[]; map: TMap }) => {
       map: map,
       width: 500,
       height: 700,
+      animation: false,
     },
 
     plotOptions: {
