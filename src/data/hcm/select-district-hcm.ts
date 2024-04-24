@@ -87,6 +87,14 @@ export const DISTRICTS_HCM = [
     name: "Huyện Cần Giờ",
     code: "can-gio",
   },
+  {
+    name: "Quận 2",
+    code: "quan-2",
+  },
+  {
+    name: "Quận 9",
+    code: "quan-9",
+  },
 ];
 
 export const DISTRICTS_LONG_AN = [
