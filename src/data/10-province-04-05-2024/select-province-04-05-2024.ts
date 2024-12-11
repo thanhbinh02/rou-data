@@ -684,3 +684,54 @@ export const DISTRICTS_HA_TINH = [
     code: "tx-ky-anh",
   },
 ];
+
+export const DISTRICTS_HAI_DUONG = [
+  {
+    name: "Thành phố Hải Dương",
+    code: "tp-hai-duong",
+  },
+  {
+    name: "Thành phố Chí Linh",
+    code: "tp-chi-linh",
+  },
+  {
+    name: "Huyện Nam Sách",
+    code: "nam-sach",
+  },
+  {
+    name: "Thị xã Kinh Môn",
+    code: "kinh-mon",
+  },
+  {
+    name: "Huyện Kim Thành",
+    code: "kim-thanh",
+  },
+  {
+    name: "Huyện Thanh Hà",
+    code: "thanh-ha",
+  },
+  {
+    name: "Huyện Cẩm Giàng",
+    code: "cam-giang",
+  },
+  {
+    name: "Huyện Bình Giang",
+    code: "binh-giang",
+  },
+  {
+    name: "Huyện Gia Lộc",
+    code: "gia-loc",
+  },
+  {
+    name: "Huyện Tứ Kỳ",
+    code: "tu-ky",
+  },
+  {
+    name: "Huyện Ninh Giang",
+    code: "ninh-giang",
+  },
+  {
+    name: "Huyện Thanh Miện",
+    code: "thanh-mien",
+  },
+];

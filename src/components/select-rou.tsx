@@ -7,11 +7,11 @@ import { TMap, TRegion, TRou } from "../ts";
 import RegionMap from "./region-map";
 
 import {
-  DISTRICTS_HA_NOI,
   DISTRICTS_HA_TINH,
+  DISTRICTS_HAI_DUONG,
 } from "../data/10-province-04-05-2024/select-province-04-05-2024";
-import * as HA_NOI_DATA from "../data/10-province-05-05-2024/ha-noi/ha-noi.json";
 import * as HA_TINH_DATA from "../data/10-province-05-05-2024/ha-tinh/ha-tinh.json";
+import * as HAI_DUONG_DATA from "../data/10-province-05-05-2024/hai-duong/hai-duong.json";
 
 type TSelectRou = {
   data: {
@@ -117,29 +117,11 @@ const options = [
     data: PROVINCES_FAR_EAST,
     map: VIET_NAM_MAP,
     provinces: [
-      // {
-      //   label: "Gia Lai",
-      //   value: "gia-lai",
-      //   data: DISTRICTS_GIA_LAI,
-      //   map: GIA_LAI_DATA,
-      // },
-      // {
-      //   label: "HAU_GIAN",
-      //   value: "HAU_GIAN",
-      //   data: DISTRICTS_HAU_GIANG,
-      //   map: HAU_GIANG_DATA,
-      // },
-      // {
-      //   label: "HA_NOI",
-      //   value: "HA_NOI",
-      //   data: DISTRICTS_HA_NOI,
-      //   map: HA_NOI_DATA,
-      // },
       {
-        label: "HA_TINH",
-        value: "HA_TINH",
-        data: DISTRICTS_HA_TINH,
-        map: HA_TINH_DATA,
+        label: "HAI_DUONG",
+        value: "HAI_DUONG",
+        data: DISTRICTS_HAI_DUONG,
+        map: HAI_DUONG_DATA,
       },
     ],
   },
