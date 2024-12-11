@@ -471,3 +471,216 @@ export const DISTRICTS_HA_GIANG = [
     code: "quang-binh",
   },
 ];
+
+export const DISTRICTS_HAU_GIANG = [
+  {
+    name: "Thành phố Vị Thanh",
+    code: "tp-vi-thanh",
+  },
+  {
+    name: "Thành phố Ngã Bảy",
+    code: "tp-nga-bay",
+  },
+  {
+    name: "Huyện Châu Thành A",
+    code: "chau-thanh-a",
+  },
+  {
+    name: "Huyện Châu Thành",
+    code: "chau-thanh",
+  },
+  {
+    name: "Huyện Phụng Hiệp",
+    code: "phung-hiep",
+  },
+  {
+    name: "Huyện Vị Thuỷ",
+    code: "vi-thuy",
+  },
+  {
+    name: "Huyện Long Mỹ",
+    code: "huyen-long-my",
+  },
+  {
+    name: "Thị xã Long Mỹ",
+    code: "thi-xa-long-my",
+  },
+];
+
+export const DISTRICTS_HA_NOI = [
+  {
+    name: "Quận Ba Đình",
+    code: "ba-dinh",
+  },
+  {
+    name: "Quận Hoàn Kiếm",
+    code: "hoan-kiem",
+  },
+  {
+    name: "Quận Tây Hồ",
+    code: "tay-ho",
+  },
+  {
+    name: "Quận Long Biên",
+    code: "long-bien",
+  },
+  {
+    name: "Quận Cầu Giấy",
+    code: "cau-giay",
+  },
+  {
+    name: "Quận Đống Đa",
+    code: "dong-da",
+  },
+  {
+    name: "Quận Hai Bà Trưng",
+    code: "hai-ba-trung",
+  },
+  {
+    name: "Quận Hoàng Mai",
+    code: "hoang-mai",
+  },
+  {
+    name: "Quận Thanh Xuân",
+    code: "thanh-xuan",
+  },
+  {
+    name: "Huyện Sóc Sơn",
+    code: "soc-son",
+  },
+  {
+    name: "Huyện Đông Anh",
+    code: "dong-anh",
+  },
+  {
+    name: "Huyện Gia Lâm",
+    code: "gia-lam",
+  },
+  {
+    name: "Quận Nam Từ Liêm",
+    code: "nam-tu-liem",
+  },
+  {
+    name: "Huyện Thanh Trì",
+    code: "thanh-tri",
+  },
+  {
+    name: "Quận Bắc Từ Liêm",
+    code: "bac-tu-liem",
+  },
+  {
+    name: "Huyện Mê Linh",
+    code: "me-linh",
+  },
+  {
+    name: "Quận Hà Đông",
+    code: "ha-dong",
+  },
+  {
+    name: "Thị xã Sơn Tây",
+    code: "son-tay",
+  },
+  {
+    name: "Huyện Ba Vì",
+    code: "ba-vi",
+  },
+  {
+    name: "Huyện Phúc Thọ",
+    code: "phuc-tho",
+  },
+  {
+    name: "Huyện Đan Phượng",
+    code: "dan-phuong",
+  },
+  {
+    name: "Huyện Hoài Đức",
+    code: "hoai-duc",
+  },
+  {
+    name: "Huyện Quốc Oai",
+    code: "quoc-oai",
+  },
+  {
+    name: "Huyện Thạch Thất",
+    code: "thach-that",
+  },
+  {
+    name: "Huyện Chương Mỹ",
+    code: "chuong-my",
+  },
+  {
+    name: "Huyện Thanh Oai",
+    code: "thanh-oai",
+  },
+  {
+    name: "Huyện Thường Tín",
+    code: "thuong-tin",
+  },
+  {
+    name: "Huyện Phú Xuyên",
+    code: "phu-xuyen",
+  },
+  {
+    name: "Huyện Ứng Hòa",
+    code: "ung-hoa",
+  },
+  {
+    name: "Huyện Mỹ Đức",
+    code: "my-duc",
+  },
+];
+
+export const DISTRICTS_HA_TINH = [
+  {
+    name: "Thành phố Hà Tĩnh",
+    code: "tp-ha-tinh",
+  },
+  {
+    name: "Thị xã Hồng Lĩnh",
+    code: "hong-linh",
+  },
+  {
+    name: "Huyện Hương Sơn",
+    code: "huong-son",
+  },
+  {
+    name: "Huyện Đức Thọ",
+    code: "duc-tho",
+  },
+  {
+    name: "Huyện Vũ Quang",
+    code: "vu-quang",
+  },
+  {
+    name: "Huyện Nghi Xuân",
+    code: "nghi-xuan",
+  },
+  {
+    name: "Huyện Can Lộc",
+    code: "can-loc",
+  },
+  {
+    name: "Huyện Hương Khê",
+    code: "huong-khe",
+  },
+  {
+    name: "Huyện Thạch Hà",
+    code: "thach-ha",
+  },
+  {
+    name: "Huyện Cẩm Xuyên",
+    code: "cam-xuyen",
+  },
+  {
+    name: "Huyện Kỳ Anh",
+    code: "ky-anh",
+  },
+  {
+    name: "Huyện Lộc Hà",
+    code: "loc-ha",
+  },
+  {
+    name: "Thị xã Kỳ Anh",
+    code: "tx-ky-anh",
+  },
+];

@@ -10,7 +10,7 @@ const RegionMap = ({ data, map }: { data: TRegion[]; map: TMap }) => {
   const options = {
     chart: {
       map: map,
-      width: 500,
+      width: 800,
       height: 700,
       animation: false,
     },
