@@ -1,0 +1,11 @@
+{
+  "id": "sa-thay",
+  "properties": {
+    "id": "sa-thay",
+    "name": "Huyện Sa Thầy"
+  },
+  "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": []
+  }
+}

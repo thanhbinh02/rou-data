@@ -6,13 +6,8 @@ import { VIET_NAM_MAP } from "../data/viet-nam";
 import { TMap, TRegion, TRou } from "../ts";
 import RegionMap from "./region-map";
 
-import {
-  DISTRICTS_HA_TINH,
-  DISTRICTS_HAI_DUONG,
-} from "../data/10-province-04-05-2024/select-province-04-05-2024";
-import * as HA_TINH_DATA from "../data/10-province-05-05-2024/ha-tinh/ha-tinh.json";
-import * as HAI_DUONG_DATA from "../data/10-province-05-05-2024/hai-duong/hai-duong.json";
-
+import { DISTRICTS_DIEN_BIEN } from "../data/10-province-04-05-2024/select-province-04-05-2024";
+import * as DIEN_BIEN_DATA from "../data/10-province-05-05-2024/dien-bien/dien-bien.json";
 type TSelectRou = {
   data: {
     name: string;
@@ -118,10 +113,10 @@ const options = [
     map: VIET_NAM_MAP,
     provinces: [
       {
-        label: "HAI_DUONG",
-        value: "HAI_DUONG",
-        data: DISTRICTS_HAI_DUONG,
-        map: HAI_DUONG_DATA,
+        label: "DIEN BIEN",
+        value: "DIEN_BIEN",
+        data: DISTRICTS_DIEN_BIEN,
+        map: DIEN_BIEN_DATA,
       },
     ],
   },
